@@ -34,21 +34,18 @@ class TextLoader():
         """
         string = re.sub(r"[^가-힣A-Za-z0-9(),!?\'\`]", " ", string)
         string = re.sub(r"\'s", " \'s", string)
-        string = re.sub(r"-", " - ", string)
-        #string = re.sub(r"\'ve", " \'ve", string)
-        #string = re.sub(r"n\'t", " n\'t", string)
-        #string = re.sub(r"\'re", " \'re", string)
-        #string = re.sub(r"\'d", " \'d", string)
-        #string = re.sub(r"\'ll", " \'ll", string)
+        string = re.sub(r"\'ve", " \'ve", string)
+        string = re.sub(r"n\'t", " n\'t", string)
+        string = re.sub(r"\'re", " \'re", string)
+        string = re.sub(r"\'d", " \'d", string)
+        string = re.sub(r"\'ll", " \'ll", string)
         string = re.sub(r",", " , ", string)
         string = re.sub(r"!", " ! ", string)
-        string = re.sub(r"\(", " ", string)
-        string = re.sub(r"\)", " ", string)
+        string = re.sub(r"\(", " \( ", string)
+        string = re.sub(r"\)", " \) ", string)
         string = re.sub(r"\?", " \? ", string)
         string = re.sub(r"\s{2,}", " ", string)
-	string = re.sub(r"[0-9]", " ", string)
-
-        return string.strip()
+        return string.strip().lower()
 
     def build_vocab(self, sentences):
         """
@@ -69,17 +66,8 @@ class TextLoader():
             data = f.read()
 
         # Optional text cleaning or make them lower case, etc.
-	# Lower case turned off
-        data = self.clean_str(data)
+        #data = self.clean_str(data)
         x_text = data.split()
-
-	# Lowercase all caps
-	apostrophed_words = re.compile(".*\'[A-z][A-z][A-z]+")
-	for n, word in enumerate(x_text):
-		if word == word.upper() and len(word)>1:
-			x_text[n] = word.lower()
-		if apostrophed_words.match(word) != None:
-			del x_text[n]
 
         self.vocab, self.words = self.build_vocab(x_text)
         self.vocab_size = len(self.words)

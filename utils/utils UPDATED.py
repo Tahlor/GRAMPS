@@ -46,7 +46,7 @@ class TextLoader():
         string = re.sub(r"\)", " ", string)
         string = re.sub(r"\?", " \? ", string)
         string = re.sub(r"\s{2,}", " ", string)
-	string = re.sub(r"[0-9]", " ", string)
+        string = re.sub(r"[0-9]", " ", string)
 
         return string.strip()
 
