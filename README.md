@@ -1,9 +1,11 @@
 # GRAMPS: Generating Really Awesome Metaphorical Poetry (Sometimes)
 
 # Description
+
 We implement a word-level Recurrent Neural Net (RNN) to generate topical, rhyming poetry with embedded metaphors. We present our unique approach and provide some illustrative poems and commentaries. We argue our system has a greater degree of creative autonomy than most rival systems while producing poems that are novel, (sometimes) valuable, and intentional. Though the system may not consistently create valuable poetry independently, we believe it can be used by human poets for inspiration.
  
  # Introduction
+ 
 “Why poetry you ask? Because of life, I answer.”
 -Dejan Stojanovic
 
@@ -70,31 +72,43 @@ This shows that simply suggesting end words is usually enough to keep the entire
 
 We can also prime the model on the first part of an existing poem, and have GRAMPS complete the poem. When constrained to follow the existing syllable count and rhyme scheme, reasonable output was generated for the last stanza of Robert Frost’s “The Road Not Taken”:
 
-    I shall be telling this with a sigh
+		I shall be telling this with a sigh
 		Somewhere ages and ages hence:
 		Two roads diverged in a wood, and I—
 		I had so much work to satisfy
 		The road that had been in sad suspense.
 
 GRAMPS completed this challenge with varying levels of success:
+
+		(early revision, without rhyming)
+		Two roads diverged in a yellow wood;
+		And sorry I could not take them both,
+		And be one traveller, long I stood,
+		I am a little man-forester.
     
-    I shall be telling this with a sigh
+		I shall be telling this with a sigh
 		Somewhere ages and ages hence:
 		Two roads diverged in a wood, and I—
-    From the neighbouring lanes—oh! Why 
-    Do hear the frog-beaver! Try me thence.
+    		From the neighbouring lanes—oh! Why 
+    		Do hear the frog-beaver! Try me thence.
+		
+		I shall be telling this with a sigh
+		Somewhere ages and ages hence:
+		Two roads diverged in a wood, and I—
+		He, who gives them no response so sly,
+		Across a long path, unseen, with joy intense.
 
 We also attempted intentionally embedding metaphors in the poem. This was more difficult than previous experiments because we now required the poem to stay on topic, embed a metaphor, rhyme, and meet syllabalic constraints. We often found that subjecting GRAMPS to too many simultaneous constraints degraded the output. Consequently, when embedding metaphor, we often dropped the rhyming constraint. 
 Even forsaking the rhyming constraint however, was often not enough to embed both a topic and a metaphor in four lines. To further encourage the incorporation of the metaphor, we variously changed end target words in the middle of a line as we sampled from the model.  This simple trick was surprisingly effective in more densely packing disparate ideas.
 
 The following poems were generated given the metaphoric conceit of a “child as a tempest.”
 
-    Shrill and the roaring of the infant
+		Shrill and the roaring of the infant
 		That we crossed in the gale.
 		A whisper of the guilty son
 		Capped with the fiery storm.
 
-    The rush to the winds sprang threatening
+		The rush to the winds sprang threatening
 		For our enemy, the infant;
 		Echoes of war and the howling
 		Waves which yet took on the baby.
@@ -105,14 +119,14 @@ We observe that the trick of changing target end words may have influenced the m
 
 While our attempts to metaphor and rhyme were generally less successful, the couplets below demonstrate that they are simultaneously achievable:
 
-    Demeter, my love, poor scholar,
+		Demeter, my love, poor scholar,
 		Thou shalt ever dance for thy dollar.
 		You’re a bond like a pudding-sick pauper,
 		While I—I am a professor!
 
 Finally, as one last humorous example, we present “marriage as death.”
 
-    Of your power! I float from their disease,
+		Of your power! I float from their disease,
 	 	The murmuring life of that, I marry;
 		From the tone—that name is tragedy,
 		It is the power of the dead couple.
@@ -147,7 +161,7 @@ There are a couple ways the training data could be further refined. Occasionally
 
 Another improvement to the training data would be to include a larger body of English text, including non-poetry, to widen the knowledge base of the model and expand the breadth of subjects it can cover. For example, G. K. Chesterton wrote that “Poets have been mysteriously silent on the subject of cheese” (Chesterton 1924). GRAMPS also had difficulty producing poems on that subject, as shown in the following example, presumably because there were no examples in the training set. Our best example of a poem on the subject of cheese follows. While it is not completely unrelated, we felt that poem lagged well behind some of the others in relevance and sense. Training on a more general corpus of text could overcome this limitation.
 
-    For very glad that I would give it up
+		For very glad that I would give it up
 		Thy skin, nor milk, and whose cup
 		For the artifice of taste,
 		That many a cake takes in the waste.
