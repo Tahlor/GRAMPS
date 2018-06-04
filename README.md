@@ -121,15 +121,12 @@ While our attempts to metaphor and rhyme were generally less successful, the cou
 
 		Demeter, my love, poor scholar,
 		Thou shalt ever dance for thy dollar.
+		
 		You’re a bond like a pudding-sick pauper,
 		While I—I am a professor!
 
 Finally, as one last humorous example, we present “marriage as death.”
-
-		Of your power! I float from their disease,
-	 	The murmuring life of that, I marry;
-		From the tone—that name is tragedy,
-		It is the power of the dead couple.
+		
 		I did suffer a bitter nightmare,
 		A drone of a voluptuous husband.
 
