@@ -47,7 +47,7 @@ To alleviate this, we employed a simple fitness function to filter out the worst
 
 The best candidate line is then appended to the poem, which is used to prime the RNN in preparation for the next line. For all of our experiments, we specified the number of lines to generate, though we consider having GRAMPS choose when to terminate a poem an important future refinement.
 
-Results
+# Results
 Different versions of our model varied the amount the RNN was influenced by external sources. The various versions exhibited different strengths and weaknesses, illustrated in the examples below.
 
 We first show how the model was able to learn syllable count, and guide each line toward a rhyming or thematically relevant end word in a fairly coherent way. The following example, primed with the subject “dirt,” shows success in accomplishing this while maintaining the theme:
