@@ -89,8 +89,8 @@ GRAMPS completed this challenge with varying levels of success:
 		I shall be telling this with a sigh
 		Somewhere ages and ages hence:
 		Two roads diverged in a wood, and I—
-    		From the neighbouring lanes—oh! Why 
-    		Do hear the frog-beaver! Try me thence.
+		From the neighbouring lanes—oh! Why 
+		Do hear the frog-beaver! Try me thence.
 		
 		I shall be telling this with a sigh
 		Somewhere ages and ages hence:
